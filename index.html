@@ -1,0 +1,477 @@
+<!-- You can print if you see this pen in debug mode -->
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+    @media print {
+        @page {
+            margin: 0;
+            size: A4;
+        }
+
+        * {
+            -webkit-print-color-adjust: exact;
+        }
+    }
+
+    * {
+        font-family: "Montserrat", sans-serif;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #5f6368;
+    }
+
+    .toCenter {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid-container {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0.33fr 1fr;
+        width: 210mm;
+        height: 290mm;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .grid-container .zone-1 {
+        padding: 40px 20px;
+        padding-left: 35px;
+        background: #d1d1d1;
+        width: 100%;
+        color: #313131;
+    }
+
+    .grid-container .zone-1 .profile {
+        display: inline-flex;
+        margin-bottom: 5px;
+        margin-left: -15px;
+        width: 215px;
+        height: 221px;
+        border-radius: 50%;
+        background-image: url(./me.png);
+        background-position: center;
+        background-size: 100%;
+        border: 4px solid #2c2b29;
+    }
+
+    .grid-container .zone-1 .contact-box {
+        margin-top: 10px;
+    }
+
+    .grid-container .zone-1 .contact-box>* {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 0.3fr 1fr;
+        margin-top: 25px;
+        align-items: center;
+    }
+
+    .grid-container .zone-1 .contact-box>* i {
+        font-size: 1.3em;
+    }
+
+    .grid-container .zone-1 .contact-box>* .text {
+        display: inline-flex;
+        word-break: break-all;
+    }
+
+    .grid-container .zone-1 .personal-box {
+        margin-top: 35px;
+    }
+
+    .grid-container .zone-1 .personal-box>*:not(.title) {
+        margin: 25px 0px;
+        grid-template-columns: 0.55fr 1fr;
+        display: grid;
+    }
+
+    .grid-container .zone-1 .personal-box .progress .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #313131;
+        border-radius: 50%;
+        margin-left: 4px;
+    }
+
+    .grid-container .zone-1 .personal-box .progress .dot.active {
+        background-color: #9db858;
+    }
+
+    .grid-container .zone-1 .hobbies-box {
+        margin-top: 35px;
+    }
+
+    .grid-container .zone-1 .hobbies-box .logo {
+        margin: 10px 0px;
+        display: grid;
+        grid-template: 1fr 1fr/1fr 1fr;
+        font-size: 2.8em;
+        grid-row-gap: 15px;
+    }
+
+    .grid-container .zone-2 {
+        background: #2c2b29;
+        padding: 40px 20px;
+        padding-right: 75px;
+        color: #b5b5b4;
+    }
+
+    .grid-container .zone-2 .headTitle {
+        font-size: 2.1em;
+        color: #9db858;
+    }
+
+    .grid-container .zone-2 .headTitle h1 {
+        font-weight: 400 !important;
+    }
+
+    .grid-container .zone-2 .subTitle h1 {
+        font-weight: 400 !important;
+    }
+
+    .grid-container .zone-2 .box {
+        display: inline-block;
+        padding: 2px 70px 2px 20px;
+        margin-left: -20px;
+        margin-top: 35px;
+        background: #9db858;
+        color: #2c2b29;
+    }
+
+    .grid-container .zone-2 .group-1 .desc {
+        margin-top: 15px;
+        line-height: 1.5;
+    }
+
+    .grid-container .zone-2 .group-2 .desc {
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    .grid-container .zone-2 .group-2 .desc ul {
+        position: relative;
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+
+    .grid-container .zone-2 .group-2 .desc ul:before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: -22px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #9db858;
+    }
+
+    .grid-container .zone-2 .group-2 .desc ul li {
+        list-style-type: none;
+        position: relative;
+    }
+
+    .grid-container .zone-2 .group-2 .desc ul li:before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: -18px;
+        height: 60px;
+        border-left: 2px solid #9db858;
+    }
+
+    .grid-container .zone-2 .group-2 .desc ul:last-of-type li:before {
+        content: none;
+    }
+
+    .grid-container .zone-2 .group-2 .desc ul li div:last-of-type {
+        color: #9db858;
+        font-weight: bold;
+    }
+
+    .grid-container .zone-2 .group-3 .desc {
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    .grid-container .zone-2 .group-3 .desc ul {
+        position: relative;
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+
+    .grid-container .zone-2 .group-3 .desc ul:before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: -22px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #9db858;
+    }
+
+    .grid-container .zone-2 .group-3 .desc ul li {
+        list-style-type: none;
+        position: relative;
+    }
+
+    .grid-container .zone-2 .group-3 .desc ul li:before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: -18px;
+        height: 100px;
+        border-left: 2px solid #9db858;
+    }
+
+    .grid-container .zone-2 .group-3 .desc ul:last-of-type li:before {
+        content: none;
+    }
+
+    .grid-container .zone-2 .group-3 .desc ul li div:nth-child(2) {
+        color: #9db858;
+        font-weight: bold;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+<div class="grid-container">
+    <div class="zone-1">
+        <div class="toCenter">
+            <div class="profile"></div>
+        </div>
+        <div class="contact-box">
+            <div class="title">
+                <h2>Contact</h2>
+            </div>
+            <div class="call"><i class="fas fa-phone-alt"></i>
+                <div class="text">(+880) 1772352212</div>
+            </div>
+            <div class="home"><i class="fas fa-home"></i>
+                <div class="text">Bangladesh</div>
+            </div>
+            <div class="website"><i class="fas fa-globe"></i>
+                <div class="text">https://github.com/developersharif</div>
+            </div>
+            <div class="email"><i class="fas fa-envelope"></i>
+                <div class="text">developersharif@yahoo.com</div>
+            </div>
+        </div>
+
+
+
+        <div class="personal-box">
+            <div class="title">
+                <h2>Skills</h2>
+            </div>
+            <div class="skill-1">
+                <p>php7</p>
+                <div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                </div>
+            </div>
+            <div class="skill-2">python3<div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="skill-2">javascript<div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot "></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="skill-1">
+                <p>vue3</p>
+                <div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                </div>
+            </div>
+
+            <div class="skill-2">Laravel8+<div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <div class="skill-1">
+                <p>Mysql</p>
+                <div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                </div>
+            </div>
+            <div class="skill-1">
+                <p>Git</p>
+                <div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                </div>
+            </div>
+            <div class="skill-1">
+                <p>Linux</p>
+                <div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                </div>
+            </div>
+            <div class="skill-1">
+                <p>windows</p>
+                <div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                    <div class="dot "></div>
+                </div>
+            </div>
+            <div class="skill-2">English<div class="progress">
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- <div class="hobbies-box">
+            <div class="title">
+                <h2>Hobbies</h2>
+            </div>
+            <div class="logo">
+                <div class="logo-2"><i class="fas fa-tv"></i></div>
+                <div class="logo-3"><i class="fas fa-camera"></i></div>
+                <div class="logo-4"><i class="fas fa-lightbulb"></i></div>
+                <div class="logo-4"><i class="fas fa-music"></i></div>
+            </div>
+        </div> -->
+    </div>
+    <div class="zone-2">
+        <div class="headTitle">
+            <h3>MD SharifulIslam</h3>
+        </div>
+        <div class="subTitle">
+            <h1>web developer<h1>
+        </div>
+        <div class="group-1">
+            <div class="title">
+                <div class="box">
+                    <h2>About Me</h2>
+                </div>
+            </div>
+            <div class="desc">Experienced PHP developer with extensive server-side web development knowledge gathered
+                across 3 years + in the core php. Well-versed in Front-End development. Led company-wide integration
+                with third-party APIs. Seeking to broaden knowledge of databases and deliver the highest standards of
+                web design in Brash General.</div>
+        </div>
+        <div class="group-2">
+            <div class="title">
+                <div class="box">
+                    <h2>Education</h2>
+                </div>
+            </div>
+            <div class="desc">
+                <ul>
+                    <li>
+                        <div class="msg-1">2014-2018 | High School</div>
+                        <div class="msg-2">Laksam pilot high school</div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="msg-1">2019-running | Institute</div>
+                        <div class="msg-2">Cumilla polytechnic Institute.</div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="group-3">
+            <div class="title">
+                <div class="box">
+                    <h2>Work Experience</h2>
+                </div>
+            </div>
+            <div class="desc">
+                <ul>
+                    <li>
+                        <div class="msg-1">Former | web developer</div>
+                        <div class="msg-2">newsnarayanganjbd.com</div>
+                        <div class="msg-3">From:11-july-2021 to 10-12-2021</div>
+                    </li>
+
+                </ul>
+                <ul>
+                    <li>
+                        <div class="msg-1"> web developer</div>
+                        <div class="msg-2">Laksamnobarun</div>
+                        <div class="msg-3">From:10-august-2021 to 01-01-2022</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
