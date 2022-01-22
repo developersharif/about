@@ -1,5 +1,5 @@
 ### Hi there 👋
-
+[![About](?style=for-the-badge&logo=twitter&logoColor=white)](https://developersharif.github.io/about/)
 <!--
 **developersharif/developersharif** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
