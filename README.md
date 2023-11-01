@@ -1,2 +1,2 @@
-## Hi there 👋
-[->page link](https://developersharif.github.io/about/)
+##  👋
+[Resume](https://developersharif.github.io/about/Resume-DeveloperSharif.pdf)
